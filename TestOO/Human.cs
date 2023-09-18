@@ -11,7 +11,7 @@ namespace TestOO
         //instance fields
         private double _height;
         private double _weight;
-        private string _name;
+        //private string _name;
 
         //properties
         public double Height
@@ -38,16 +38,21 @@ namespace TestOO
             }
         }
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
+        //public string Name
+        //{
+        //    get
+        //    {
+        //        return _name;
+        //    }
+        //    set
+        //    {
+        //        _name = value;
+        //    }
+        //}
+
+        public string Name {
+            get;
+            private set; 
         }
 
         public double BMI
@@ -60,7 +65,7 @@ namespace TestOO
 
         public Human(string name, double height, double weight)
         {
-            _name = name;
+            Name = name;
             _height = height;
             _weight = weight;
         }
