@@ -16,10 +16,22 @@ namespace TestOO
         private string _phone;
         private int _semester;
 
+        
 
-        private const int basicPrintPrice = 300; 
+
+        private const int basicPrintPrice = 300;
 
         //Property, bruges til at tilgå instance fields
+
+        private static int _counter = 0;//Tilhører klassen, fælles for alle objekter
+        private int _studentID;
+
+        public int StudentID
+        {
+            get { return _studentID; }
+            set { _studentID = value; }
+        }
+
 
         public string Name
         {
@@ -41,6 +53,8 @@ namespace TestOO
             _education = education;
             _phone = phone;
             _semester = semester;
+            _counter++;
+            _studentID = _counter;
         }
 
 
@@ -51,11 +65,22 @@ namespace TestOO
             Console.WriteLine($"Student navn {_name} alder {_age} uddannelse {_education} tel {_phone} semester {_semester}");
         }
 
+
+        public override string ToString()
+        {
+            return $"Student navn {_name} alder {_age} uddannelse {_education} tel {_phone} semester {_semester}";
+        }
+
+
         public double CostPrPrint()
         {
             return  _semester * basicPrintPrice;
         }
 
-
+        public void NextSemester()
+        {
+            _semester++;
+            //_semester= _semester + 1; 
+        }
     }
 }

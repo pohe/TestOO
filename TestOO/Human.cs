@@ -11,7 +11,7 @@ namespace TestOO
         //instance fields
         private double _height;
         private double _weight;
-        //private string _name;
+        private string _name;
 
         //properties
         public double Height
@@ -38,22 +38,26 @@ namespace TestOO
             }
         }
 
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (value.Length >= 2)
+                    _name = value;
+                else
+                    _name = "Undefined";
+            }
+        }
+
         //public string Name
         //{
-        //    get
-        //    {
-        //        return _name;
-        //    }
-        //    set
-        //    {
-        //        _name = value;
-        //    }
+        //    get;
+        //    set;
         //}
-
-        public string Name {
-            get;
-            private set; 
-        }
 
         public double BMI
         {

@@ -2,8 +2,14 @@
 
 using TestOO;
 
-//Student s1 = new Student("Ole", 25, "Datamatiker", "12121212", 1); //argumenter
-//Student s2 = new Student("Peter", 27, "Laborant", "13131313", 3);
+Student s1 = new Student("Ole", 25, "Datamatiker", "12121212", 1); //argumenter
+
+Console.WriteLine("Udskrift af tostring " + s1);
+Console.WriteLine($"StudentId for {s1.Name}  er {s1.StudentID}" );
+
+Student s2 = new Student("Peter", 27, "Laborant", "13131313", 3);
+Console.WriteLine($"StudentId for {s2.Name}  er {s2.StudentID}");
+
 
 //s1.PrintInfo();
 //s2.PrintInfo();
@@ -28,9 +34,14 @@ c1.RegNo = "FG 23232";
 c1.PrintInfo();
 
 Human jens = new Human("Jens Jensen", 1.8, 82.5);
+string navn = jens.Name;
 
+jens.Name = "Ib";
 double jensHeight = jens.Height;
 
 jens.Height = 1.99;
 
 
+
+//SimpleMath simpleMath = new SimpleMath();
+int resultat = SimpleMath.Add(int.Parse(Console.ReadLine()), 13);
